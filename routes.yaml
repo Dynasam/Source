@@ -1,0 +1,32 @@
+routes:
+#  /books/:
+#    controller: channel
+#    filter: tag:[flickan-vid-pianot]
+#    template: collections
+  /tintinnabuli/:
+    controller: channel
+    filter: tag:[superorganismen,books]
+    template: collections
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+#    filter: tag:-[books, flickan-vid-pianot]
+#  /flickan-vid-pianot/:
+#    permalink: /flickan-vid-pianot/{slug}/
+#    filter: tag:flickan-vid-pianot
+#    template: index
+    /superorganismen/:
+      permalink: /tag/superorganismen/{slug}/
+      filter: tag:supersorganismen
+      template: index
+    /books/:
+      permalink: /tag/books/{slug}/
+      filter: tag:flickan-vid-pianot
+      template: index
+
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
