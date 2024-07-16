@@ -11,7 +11,7 @@
         
         {{#if showTitle}}
             <h2 class="gh-container-title">
-                {{#unless title}}Latest{{else}}{{title}}{{/unless}}
+                {{#unless title}}{{t "Latest"}}{{else}}{{title}}{{/unless}}
             </h2>
         {{/if}}
 
@@ -23,7 +23,7 @@
                     {{#match @custom.header_style "Highlight"}}
                         {{#if @custom.show_featured_posts}}
                             {{#match posts.length ">=" 4}}
-                                {{#get "posts" include="authors" limit="16"}}
+                                {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="16"}}
                                     {{#foreach posts from="5" limit="12"}}
                                         {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
@@ -31,7 +31,7 @@
                             {{/match}}
                         {{else}}
                             {{#match posts.length ">=" 10}}
-                                {{#get "posts" include="authors" limit="22"}}
+                                {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="22"}}
                                     {{#foreach posts from="11" limit="12"}}
                                         {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
@@ -40,14 +40,14 @@
                         {{/if}}
                     {{else match @custom.header_style "Magazine"}}
                         {{#match posts.length ">=" 7}}
-                            {{#get "posts" include="authors" limit="19"}}
+                            {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="19"}}
                                 {{#foreach posts from="8" limit="12"}}
                                     {{> "post-card" lazyLoad=true}}
                                 {{/foreach}}
                             {{/get}}
                         {{/match}}
                     {{else}}
-                        {{#get "posts" include="authors" limit="12"}}
+                        {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="12"}}
                             {{#foreach posts}}
                                 {{> "post-card" lazyLoad=true}}
                             {{/foreach}}
@@ -58,7 +58,7 @@
                 {{!-- All posts --}}
                 {{#match feed "index"}}
                     {{#match pagination.page 2}}
-                        {{#get "posts" include="authors" limit=@config.posts_per_page as |recent|}}
+                        {{#get "posts" include="authors" filter="tag:-no-more-issues" limit=@config.posts_per_page as |recent|}}
                             {{#foreach recent}}
                                 {{> "post-card"}}
                             {{/foreach}}
@@ -92,7 +92,7 @@
                         {{/if}}
                         {{#if @site.members_enabled}}
                             {{#unless @member}}
-                                <button class="gh-button" data-portal="signup">Subscribe</button>
+                                <button class="gh-button" data-portal="signup">{{t "Subscribe"}}</button>
                             {{else}}
                                 {{#if @site.paid_members_enabled}}
                                     {{#unless @member.paid}}
@@ -104,9 +104,9 @@
                     </section>
                     {{#if @site.recommendations_enabled}}
                         <section class="gh-recommendations">
-                            <h4 class="gh-sidebar-title">Recommendations</h4>
+                            <h4 class="gh-sidebar-title">{{t "Recommendations"}}</h4>
                             {{recommendations}}
-                            <button data-portal="recommendations">See all {{> "icons/arrow"}}</button>
+                            <button data-portal="recommendations">{{t "See all"}} {{> "icons/arrow"}}</button>
                         </section>
                     {{/if}}
                 </div>
@@ -115,7 +115,7 @@
 
         {{#match pagination.pages ">" 1}}
             <div class="gh-more is-title">
-                <a href="{{@site.url}}/page/2">See all {{> "icons/arrow"}}</a>
+                <a href="{{@site.url}}/page/2">{{t "See all"}} {{> "icons/arrow"}}</a>
             </div>
         {{/match}}
 

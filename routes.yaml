@@ -1,30 +1,26 @@
 routes:
-#  /books/:
-#    controller: channel
-#    filter: tag:[flickan-vid-pianot]
-#    template: collections
   /tintinnabuli/:
     controller: channel
-    filter: tag:[superorganismen,books]
+    filter: tag:[superorganismen,komplexitet]
     template: collections
+
 
 collections:
   /:
     permalink: /{slug}/
     template: index
-#    filter: tag:-[books, flickan-vid-pianot]
-#  /flickan-vid-pianot/:
-#    permalink: /flickan-vid-pianot/{slug}/
-#    filter: tag:flickan-vid-pianot
-#    template: index
+#    filter: tag:-[tag/no-more-issues,tag/books]
     /superorganismen/:
       permalink: /tag/superorganismen/{slug}/
       filter: tag:supersorganismen
       template: index
-    /books/:
-      permalink: /tag/books/{slug}/
-      filter: tag:flickan-vid-pianot
+    /komplexitet/:
+      permalink: /tag/komplexitet/{slug}/
+      filter: tag:komplexitet
       template: index
+#    /tag/: 
+#      permalink: /tag/{slug}/
+#      filter: 'tag:-books+tag:-no-more-issues'
 
 
 taxonomies:

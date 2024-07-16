@@ -3330,3 +3330,153 @@ figcaption a {
 .pswp--minimal--dark .pswp__top-bar {
     background: none;
 }
+
+
+/* Extra tillagt av mig */
+
+.tag-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Lägger till mellanrum mellan korten */
+}
+
+.tag-card {
+    display: flex;
+    flex: 1 1 calc(33.333% - 20px); /* Tre kort per rad med mellanrum */
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+    overflow: hidden;
+    /* margin: 10px 0; */
+    margin: 40px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Ändra till radlayout */
+    align-items: center;
+    padding: 20px;
+}
+
+.tag-card-link {
+    display: flex;
+    flex-direction: row; /* Ändra till radlayout */
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.tag-card-image {
+    flex-shrink: 0;
+    width: 150px; /* Justera storleken på bilden */
+    height: 150px; /* Justera höjden på bilden */
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.tag-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Använd cover för att passa bilden i container */
+    display: block;
+}
+
+.tag-card-wrapper {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.tag-card-title {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.tag-card-excerpt {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Media query för små skärmar */
+@media (max-width: 768px) {
+    .tag-card {
+        flex-direction: column; /* Ändra till kolumnlayout */
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .tag-card-link {
+        flex-direction: column; /* Ändra till kolumnlayout */
+    }
+
+    .tag-card-image {
+        width: 100%; /* Full bredd för bilden */
+        height: auto; /* Anpassa höjden automatiskt */
+        margin: 0 0 20px 0;
+    }
+
+    .tag-card-wrapper {
+        padding: 0; /* Lägg till mer padding ovanför och under texten */
+    }
+}
+
+/*Det följande är för att styra utseende på introduktionen av Tintinnabuli*/
+.introduction-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.introduction-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.introduction-text {
+    flex: 1;
+    padding-right: 40px; /*20px;*/
+    margin-bottom: 40px; /*20px;*/
+    margin-left: 40px; /*20px;*/
+}
+
+.introduction-content h2 {
+    font-size: calc(2.2em * var(--factor, 1));
+    letter-spacing: -0.02em;
+}
+
+.introduction-image {
+    flex: 1;
+    text-align: left; /*right;*/
+}
+
+.introduction-image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+    .introduction-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .introduction-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .introduction-image {
+        text-align: center; /*center; justera till center om du vill centrera bilden */
+        margin-left: 0; /* Ta bort margin för små skärmar */
+        width: 100%; /* Lägg till detta för att säkerställa att omgivande element täcker hela bredden */
+    }
+
+    .introduction-image img {
+        width: 100%; /* Säkerställ att bilden täcker hela bredden på små skärmar */
+        margin-left: 0; /* Ta bort margin för små skärmar */
+    }
+}
