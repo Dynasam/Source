@@ -31,7 +31,7 @@
                             {{/match}}
                         {{else}}
                             {{#match posts.length ">=" 10}}
-                                {{#get "posts" include="authors" limit="22"}}
+                                {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="22"}}
                                     {{#foreach posts from="11" limit="12"}}
                                         {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
@@ -40,7 +40,7 @@
                         {{/if}}
                     {{else match @custom.header_style "Magazine"}}
                         {{#match posts.length ">=" 7}}
-                            {{#get "posts" include="authors" limit="19"}}
+                            {{#get "posts" include="authors"  filter="tag:-no-more-issues" limit="19"}}
                                 {{#foreach posts from="8" limit="12"}}
                                     {{> "post-card" lazyLoad=true}}
                                 {{/foreach}}
