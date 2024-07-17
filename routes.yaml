@@ -3,6 +3,10 @@ routes:
     controller: channel
     filter: tag:[superorganismen,komplexitet]
     template: collections
+  /noveller/:
+    controller: channel
+    filter: tag:[flickan-vid-pianot,dikter]
+    template: noveller
 
 
 collections:
@@ -17,6 +21,14 @@ collections:
     /komplexitet/:
       permalink: /tag/komplexitet/{slug}/
       filter: tag:komplexitet
+      template: index
+    /flickan-vid-pianot/:
+      permalink: /tag/flickan-vid-pianot/{slug}/
+      filter: tag:flickan-vid-pianot
+      template: index
+    /dikter/:
+      permalink: /tag/dikter/{slug}/
+      filter: tag:dikter
       template: index
 #    /tag/: 
 #      permalink: /tag/{slug}/

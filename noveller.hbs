@@ -1,0 +1,55 @@
+
+{{! noveller.hbs }}
+
+{{!< default}}
+
+{{#get "tags" filter="slug:noveller" limit="1"}}
+    {{#foreach tags}}
+        <section class="introduction-section">
+            <div class="introduction-content">
+                <div class="introduction-image">
+                    {{#if feature_image}}
+                        <img
+                            srcset="{{img_url feature_image size="xs" format="webp"}} 160w,
+                                    {{img_url feature_image size="s" format="webp"}} 320w,
+                                    {{img_url feature_image size="m" format="webp"}} 600w,
+                                    {{img_url feature_image size="l" format="webp"}} 960w,
+                                    {{img_url feature_image size="xl" format="webp"}} 1200w,
+                                    {{img_url feature_image size="xxl" format="webp"}} 2000w"
+                            sizes="(max-width: 1200px) 100vw, 1200px"
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{name}}"
+                            loading="lazy"
+                        >
+                    {{/if}}
+                </div>
+                <div class="introduction-text">
+                    <h2>{{name}}</h2>
+                    <p>{{description}}</p>
+                </div>
+
+            </div>
+        </section>
+    {{/foreach}}
+{{/get}}
+
+<section id="flickan_vid_pianot">
+  <div class="tag-info">
+    {{#get "tags" filter="slug:flickan-vid-pianot" limit="all"}}
+        {{#foreach tags}}
+            {{> "tag-card" tag=this}}
+        {{/foreach}}
+    {{/get}}
+  </div>
+</section>
+
+<section id="dikter">
+  <div class="tag-info">
+    {{#get "tags" filter="slug:dikter" limit="all"}}
+        {{#foreach tags}}
+            {{> "tag-card" tag=this}}
+        {{/foreach}}
+    {{/get}}
+  </div>
+</section>
+
