@@ -5,8 +5,12 @@ routes:
     template: collections
   /noveller/:
     controller: channel
-    filter: tag:[flickan-vid-pianot,dikter]
+    filter: tag:[flickan-vid-pianot,dikter,breven-till-dion]
     template: noveller
+  /recensioner/:
+    controller: channel
+    filter: tag:[recensioner]
+    template: index
 
 
 collections:
@@ -29,6 +33,10 @@ collections:
     /dikter/:
       permalink: /tag/dikter/{slug}/
       filter: tag:dikter
+      template: index
+    /breven-till-dion/:
+      permalink: /tag/breven-till-dion/{slug}/
+      filter: tag:breven-till-dion
       template: index
 #    /tag/: 
 #      permalink: /tag/{slug}/
