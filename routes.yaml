@@ -38,9 +38,6 @@ collections:
       permalink: /tag/breven-till-dion/{slug}/
       filter: tag:breven-till-dion
       template: index
-#    /tag/: 
-#      permalink: /tag/{slug}/
-#      filter: 'tag:-books+tag:-no-more-issues'
 
 
 taxonomies:
