@@ -3458,6 +3458,21 @@ figcaption a {
     margin-left: 20px;
 }
 
+.intro-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.intro-container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.intro-container p {
+    font-size: 1.2em;
+    color: #666;
+}
+
 @media (max-width: 767px) {
     .introduction-content {
         flex-direction: column;
@@ -3549,6 +3564,17 @@ figcaption a {
 .FCJ-tag-card-excerpt {
     font-size: 1em;
     color: #666;
+}
+
+.FCJ-tag-card-post-count {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5); /* Halvtransparent svart bakgrund */
+    color: #fff;
+    font-size: 0.6em;
+    text-align: right;
 }
 
 /* Anpassningar för mindre skärmar */

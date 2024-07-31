@@ -34,6 +34,10 @@
 {{/get}}
 
 <section id="superorganismen">
+    <div class="intro-container">
+        <h1>Superorganismen</h1>
+        <hr>
+    </div>
   <div class="tag-info">
     {{#get "tags" filter="slug:superorganismen" limit="all"}}
         {{#foreach tags}}
@@ -43,7 +47,9 @@
   </div>
 </section>
 
-<section id="komplexitet">
+{{!-- Denna är en markör för en kommande Tintinnabuli. Anpassa 
+vilka slugs som filtreras och id. Justera även i routes.yaml. --}}
+{{!-- <section id="komplexitet">
   <div class="tag-info">
     {{#get "tags" filter="slug:komplexitet" limit="all"}}
         {{#foreach tags}}
@@ -51,5 +57,5 @@
         {{/foreach}}
     {{/get}}
   </div>
-</section>
+</section> --}}
 

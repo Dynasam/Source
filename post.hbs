@@ -63,7 +63,8 @@
 {{/post}}
 
 {{#if @custom.show_related_articles}}
-    {{#get "posts" include="authors" filter="id:-{{post.id}}" limit="4" as |next|}}
+    {{#get "posts" include="tags,authors" filter="id:-{{post.id}}+tag:{{post.primary_tag.slug}}" order="published_at asc" limit="8" as |next|}}
+    {{!-- {{#get "posts" include="tags,authors" filter="id:-{{id}}+primary_tag:{{primary_tag.slug}}+published_at:<'{{post.published_at}}'" order="published_at desc" limit="4" as |next|}} --}}
         {{#if next}}
             <section class="gh-container is-grid gh-outer">
                 <div class="gh-container-inner gh-inner">
@@ -78,3 +79,27 @@
         {{/if}}
     {{/get}}
 {{/if}}
+
+{{!-- {{#if @custom.show_related_articles}}
+        {{#get "posts" include="tags,authors" filter="id:-{{id}}+primary_tag:{{primary_tag.slug}}+published_at:<'{{post.published_at}}'" limit="1" order="published_at desc" as |previous|}}
+            {{#get "posts" include="tags,authors" filter="id:-{{id}}+primary_tag:{{primary_tag.slug}}+published_at:>'{{published_at}}'" limit="3" order="published_at asc" as |next|}}
+                {{#if previous.length}}
+                    {{#if next.length}}
+                        <section class="gh-container is-grid gh-outer">
+                            <div class="gh-container-inner gh-inner">
+                                <h2 class="gh-container-title">{{t "Read more"}}</h2>
+                                <div class="gh-feed">
+                                    {{#foreach previous}}
+                                        {{> "post-card" lazyLoad=true}}
+                                    {{/foreach}}
+                                    {{#foreach next}}
+                                        {{> "post-card" lazyLoad=true}}
+                                    {{/foreach}}
+                                </div>
+                            </div>
+                        </section>
+                    {{/if}}
+                {{/if}}
+            {{/get}}
+        {{/get}}
+{{/if}} --}}

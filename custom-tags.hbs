@@ -2,6 +2,7 @@
 
 {{!< default}}
 
+
 {{!-- <section id="taggat">
   <div class="tag-info">
     {{#get "tags" limit="all"}}
@@ -13,16 +14,32 @@
 </section> --}}
 
 <div class="tags-container">
-    {{#get "tags" limit="all"}}
+    <div class="intro-container">
+        <h1>Samlingar</h1>
+        <p>Här hittar du en sammanställning av samtliga ämnen. 
+            Utforska och hitta inlägg som intresserar dig!</p>
+        <br>
+        <hr>
+    </div>
+
+    {{#get "tags" limit="all" filter="slug:-[no-more-issues,tintinnabuli]"}}
         {{#foreach tags}}
         <div class="FCJ-tag-card">
             <a class="FCJ-tag-card-link" href="{{url}}">
                 <div class="FCJ-tag-card-image">
                     <img src="{{feature_image}}" alt="{{name}}">
                     <div class="FCJ-tag-card-title">{{name}}</div>
+                    {{#get "posts" filter="tag:{{slug}}" limit="1"}}
+                        <div class="FCJ-tag-card-post-count">({{pagination.total}} inlägg)</div>
+                    {{/get}}                    
+                    {{!-- <div class="FCJ-tag-card-title">{{name}} {{post-count}} Inlägg</div>
+                    <div class="FCJ-tag-card-post_count">inlägg</div> --}}
                 </div>
             </a>
         </div>
         {{/foreach}}
     {{/get}}
 </div>
+
+
+
