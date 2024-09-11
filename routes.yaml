@@ -5,7 +5,7 @@ routes:
     template: collections
   /noveller/:
     controller: channel
-    filter: tag:[flickan-vid-pianot,dikter,breven-till-dion]
+    filter: tag:[flickan-vid-pianot,dikter,breven-till-dion,avtryck-i-själen]
     template: noveller
   /recensioner/:
     controller: channel
@@ -37,6 +37,10 @@ collections:
     /breven-till-dion/:
       permalink: /tag/breven-till-dion/{slug}/
       filter: tag:breven-till-dion
+      template: index
+    /avtryck-i-själen/:
+      permalink: /tag/avtryck-i-själen/{slug}/
+      filter: tag:avtryck-i-själen
       template: index
 
 

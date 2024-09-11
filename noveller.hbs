@@ -62,3 +62,13 @@
     {{/get}}
   </div>
 </section>
+
+<section id="avtryck-i-själen">
+  <div class="tag-info">
+    {{#get "tags" filter="slug:avtryck-i-själen" limit="all"}}
+        {{#foreach tags}}
+            {{> "tag-card" tag=this}}
+        {{/foreach}}
+    {{/get}}
+  </div>
+</section>
