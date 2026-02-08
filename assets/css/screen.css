@@ -3578,9 +3578,9 @@ figcaption a {
 }
 
 /* Anpassningar för mindre skärmar */
-@media (max-width: 767px) {
+@media (max-width: 766px) {
     .FCJ-tag-card {
-        flex: 1 1 100%; /* En kolumn per rad */
+        flex: 1 1 100%; /* En kolumn per rad  */
         margin: 20px 0; /* Justera marginalerna för mindre skärmar */
     }
 
