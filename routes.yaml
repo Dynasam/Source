@@ -12,36 +12,41 @@ routes:
     filter: tag:[recensioner]
     template: index
 
-
 collections:
   /:
     permalink: /{slug}/
     template: index
+    filter: tag:-notes
 #    filter: tag:-[tag/no-more-issues,tag/books]
-    /superorganismen/:
-      permalink: /tag/superorganismen/{slug}/
-      filter: tag:supersorganismen
-      template: index
-    /komplexitet/:
-      permalink: /tag/komplexitet/{slug}/
-      filter: tag:komplexitet
-      template: index
-    /flickan-vid-pianot/:
-      permalink: /tag/flickan-vid-pianot/{slug}/
-      filter: tag:flickan-vid-pianot
-      template: index
-    /dikter/:
-      permalink: /tag/dikter/{slug}/
-      filter: tag:dikter
-      template: index
-    /breven-till-dion/:
-      permalink: /tag/breven-till-dion/{slug}/
-      filter: tag:breven-till-dion
-      template: index
-    /avtryck-i-själen/:
-      permalink: /tag/avtryck-i-själen/{slug}/
-      filter: tag:avtryck-i-själen
-      template: index
+  /notes/:
+    permalink: /notes/{slug}/
+    template: notes
+    filter: tag:notes
+
+  /superorganismen/:
+    permalink: /tag/superorganismen/{slug}/
+    filter: tag:superorganismen
+    template: index
+  /komplexitet/:
+    permalink: /tag/komplexitet/{slug}/
+    filter: tag:komplexitet
+    template: index
+  /flickan-vid-pianot/:
+    permalink: /tag/flickan-vid-pianot/{slug}/
+    filter: tag:flickan-vid-pianot
+    template: index
+  /dikter/:
+    permalink: /tag/dikter/{slug}/
+    filter: tag:dikter
+    template: index
+  /breven-till-dion/:
+    permalink: /tag/breven-till-dion/{slug}/
+    filter: tag:breven-till-dion
+    template: index
+  /avtryck-i-själen/:
+    permalink: /tag/avtryck-i-själen/{slug}/
+    filter: tag:avtryck-i-själen
+    template: index
 
 
 taxonomies:

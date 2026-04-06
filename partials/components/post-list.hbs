@@ -23,7 +23,7 @@
                     {{#match @custom.header_style "Highlight"}}
                         {{#if @custom.show_featured_posts}}
                             {{#match posts.length ">=" 4}}
-                                {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="16"}}
+                                {{#get "posts" include="authors" filter="tag:-[no-more-issues]" limit="16"}}
                                     {{#foreach posts from="5" limit="12"}}
                                         {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
@@ -31,7 +31,7 @@
                             {{/match}}
                         {{else}}
                             {{#match posts.length ">=" 10}}
-                                {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="22"}}
+                                {{#get "posts" include="authors" filter="tag:-[no-more-issues]" limit="22"}}
                                     {{#foreach posts from="11" limit="12"}}
                                         {{> "post-card" lazyLoad=true}}
                                     {{/foreach}}
@@ -40,14 +40,14 @@
                         {{/if}}
                     {{else match @custom.header_style "Magazine"}}
                         {{#match posts.length ">=" 7}}
-                            {{#get "posts" include="authors"  filter="tag:-no-more-issues" limit="19"}}
+                            {{#get "posts" include="authors"  filter="tag:-[no-more-issues]" limit="19"}}
                                 {{#foreach posts from="8" limit="12"}}
                                     {{> "post-card" lazyLoad=true}}
                                 {{/foreach}}
                             {{/get}}
                         {{/match}}
                     {{else}}
-                        {{#get "posts" include="authors" filter="tag:-no-more-issues" limit="12"}}
+                        {{#get "posts" include="authors" filter="tag:-[no-more-issues]" limit="12"}}
                             {{#foreach posts}}
                                 {{> "post-card" lazyLoad=true}}
                             {{/foreach}}
@@ -58,7 +58,7 @@
                 {{!-- All posts --}}
                 {{#match feed "index"}}
                     {{#match pagination.page 2}}
-                        {{#get "posts" include="authors" filter="tag:-no-more-issues" limit=@config.posts_per_page as |recent|}}
+                        {{#get "posts" include="authors" filter="tag:-[no-more-issues]" limit=@config.posts_per_page as |recent|}}
                             {{#foreach recent}}
                                 {{> "post-card"}}
                             {{/foreach}}
@@ -88,6 +88,14 @@
         {{#if showSidebar}}
             <aside class="gh-sidebar">
                 <div class="gh-sidebar-inner">
+                    {{#is "home"}}
+                    <section class="gh-notes">
+                        <h3 class="gh-sidebar-title">Notes</h3>
+                        <p>Följ via Mastodon eller andra Fediverse-appar med <strong>@fredrik@simplicitet.se</strong></p>
+                        <script src="https://cdn.jsdelivr.net/npm/@synapsmedia/ghost-activitypub-embed@latest/ghap-embed.min.js"></script>
+                        <ghost-activitypub-embed></ghost-activitypub-embed>
+                    </section>
+                    {{/is}}
                     <section class="gh-about">
                         {{#if @site.icon}}
                             <img class="gh-about-icon" src="{{@site.icon}}" alt="{{@site.title}}" loading="lazy">
