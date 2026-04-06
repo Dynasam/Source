@@ -18,10 +18,10 @@ collections:
     template: index
     filter: tag:-notes
 #    filter: tag:-[tag/no-more-issues,tag/books]
-  /notes/:
-    permalink: /notes/{slug}/
-    template: notes
-    filter: tag:notes
+#  /notes/:
+#    permalink: /notes/{slug}/
+#    template: notes
+#    filter: tag:notes
 
   /superorganismen/:
     permalink: /tag/superorganismen/{slug}/
@@ -47,7 +47,10 @@ collections:
     permalink: /tag/avtryck-i-själen/{slug}/
     filter: tag:avtryck-i-själen
     template: index
-
+  /reprogression/:
+    permalink: /tag/reprogression/{slug}/
+    filter: tag:reprogression
+    template: index
 
 taxonomies:
   tag: /tag/{slug}/
